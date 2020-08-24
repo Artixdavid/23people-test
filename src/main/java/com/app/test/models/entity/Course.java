@@ -16,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "courses")
-@OnDelete(action = OnDeleteAction.CASCADE)
 public class Course implements Serializable {
 
 	/**

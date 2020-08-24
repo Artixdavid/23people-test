@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "students")
-@OnDelete(action = OnDeleteAction.CASCADE)
 public class Student implements Serializable {
 
 	/**
@@ -49,7 +48,6 @@ public class Student implements Serializable {
 
 	@OneToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name = "courseid")
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Course course;
 
 	public Long getId() {
