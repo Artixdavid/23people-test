@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-test-23people
+  name: app-test-23people
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-test-23people
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: app-test-23people
+    spec:
+      containers:
+        - image: gcr.io/app-test-287401/github.com/artixdavid/23people-test
+          imagePullPolicy: IfNotPresent
+          name: buildpack-app-sha256-1
+---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  labels:
+    app: app-test-23people
+  name: app-test-23people-hpa-tdra
+  namespace: default
+spec:
+  maxReplicas: 5
+  metrics:
+    - resource:
+        name: cpu
+        targetAverageUtilization: 80
+      type: Resource
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: app-test-23people
+---
+apiVersion: v1
+kind: Service
+metadata:
+  finalizers:
+    - service.kubernetes.io/load-balancer-cleanup
+  labels:
+    app: app-test-23people
+  name: app-test-23people-service
+  namespace: default
+spec:
+  clusterIP: 10.87.6.84
+  externalTrafficPolicy: Cluster
+  ports:
+    - nodePort: 32698
+      port: 90
+      protocol: TCP
+      targetPort: 90
+  selector:
+    app: app-test-23people
+  sessionAffinity: None
+  type: LoadBalancer
