@@ -1,7 +1,5 @@
 INSERT INTO users ( username, isadmin) values ('david' , true);
 
-
-
 INSERT INTO courses ( courseName, code) values ('First Course' , 'AAAA');
 INSERT INTO courses ( courseName, code) values ('AAAB Course' , 'AAAB');
 INSERT INTO courses ( courseName, code) values ('AAAC Course' , 'AAAC');
@@ -34,5 +32,4 @@ INSERT INTO courses ( courseName, code) values ('AGBA Course' , 'AGBA');
 INSERT INTO students (name, lastname, rut, age, courseid) values ('Peter', 'Row', '25766635-2', '2005-08-08',19);
 INSERT INTO students (name, lastname, rut, age, courseid) values ('Perla', 'Seitt', '18599210-1', '1992-02-11',5);
 INSERT INTO students (name, lastname, rut, age, courseid) values ('David', 'Leones', '18599209-8', '1992-11-09',1);
-
 INSERT INTO students (name, lastname, rut, age) values ('Juan', 'Rodriguez', '7457313-4', '1992-02-08');

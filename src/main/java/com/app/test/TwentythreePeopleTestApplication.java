@@ -32,7 +32,6 @@ public class TwentythreePeopleTestApplication {
 				.addFilterAfter(new JWTAuthorizationFilter(jwtService), UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests()
 				.antMatchers("/token").permitAll()
-				.antMatchers("/", "/css/**", "/js/**", "/img/**").permitAll()
 				.anyRequest().authenticated();
 		}
 	}
