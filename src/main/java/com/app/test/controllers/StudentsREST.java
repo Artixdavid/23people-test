@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.test.Utils.Utils;
@@ -25,7 +26,8 @@ public class StudentsREST {
 	@Autowired
 	private IStudentService studentService;
 
-	@GetMapping("/students")
+	@GetMapping(value="/students")
+	@ResponseBody
 	public List<Student> getStudens() {
 		return (List<Student>) studentService.findall();
 	}
@@ -48,7 +50,8 @@ public class StudentsREST {
 
 	}
 
-	@PostMapping("/students/")
+	@PostMapping(value="/students/")
+	@ResponseBody
 	public ResponseEntity<?> createStudent(@RequestBody StudentNew newStuden) {
 		Response response;
 
@@ -106,7 +109,8 @@ public class StudentsREST {
 		return new ResponseEntity<Object>(response, HttpStatus.BAD_REQUEST);
 	}
 
-	@PutMapping("/students/{id}")
+	@PutMapping(value="/students/{id}")
+	@ResponseBody
 	public ResponseEntity<?> updateStudent(@RequestBody StudentNew studentNew, @PathVariable(value = "id") Long id) {
 
 		Response response;
@@ -165,7 +169,8 @@ public class StudentsREST {
 
 	}
 
-	@DeleteMapping("/students/{id}")
+	@DeleteMapping(value="/students/{id}")
+	@ResponseBody
 	public ResponseEntity<?> deleteStudent(@PathVariable(value = "id") Long id) {
 
 		Response response;

@@ -2,22 +2,22 @@ package com.app.test.models.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "courses")
+@OnDelete(action = OnDeleteAction.CASCADE)
 public class Course implements Serializable {
-	
 
 	/**
 	 * 
@@ -26,14 +26,14 @@ public class Course implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="courseid")
+	@Column(name = "courseid")
 	@JsonBackReference
 	private Long courseId;
 
-	@Column(name="coursename")
+	@Column(name = "coursename")
 	private String courseName;
 
-	@Column(name="code")
+	@Column(name = "code")
 	private String code;
 
 	public Long getCourseId() {
@@ -51,7 +51,7 @@ public class Course implements Serializable {
 	public void setCourseName(String courseName) {
 		this.courseName = courseName;
 	}
-	
+
 	public String getCode() {
 		return code;
 	}
@@ -59,6 +59,5 @@ public class Course implements Serializable {
 	public void setCode(String code) {
 		this.code = code;
 	}
-
 
 }

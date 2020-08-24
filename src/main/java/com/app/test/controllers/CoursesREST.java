@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.test.dto.CourseNew;
@@ -24,12 +25,13 @@ public class CoursesREST {
 	@Autowired
 	private ICourseService courseService;
 
-	@GetMapping("/courses")
+	@GetMapping(value="/courses")
 	public List<Course> getStudens() {
 		return (List<Course>) courseService.findAll();
 	}
 
-	@GetMapping("/courses/{id}")
+	@GetMapping(value="/courses/{id}")
+	@ResponseBody
 	public ResponseEntity<?> getStudenById(@PathVariable(value = "id") Long id) {
 		Response response;
 		if (id == null) {
@@ -45,7 +47,8 @@ public class CoursesREST {
 		return new ResponseEntity<Object>(course, HttpStatus.OK);
 	}
 
-	@PostMapping("/courses/")
+	@PostMapping(value="/courses/")
+	@ResponseBody
 	public ResponseEntity<?> createCourse(@RequestBody CourseNew newcourse) {
 		Response response;
 		if (newcourse == null) {
@@ -75,7 +78,8 @@ public class CoursesREST {
 		return new ResponseEntity<Object>(response, HttpStatus.BAD_REQUEST);
 	}
 
-	@PutMapping("/courses/{id}")
+	@PutMapping(value="/courses/{id}")
+	@ResponseBody
 	public ResponseEntity<?> updateCourse(@RequestBody CourseNew newcourse, @PathVariable(value = "id") Long id) {
 		Response response;
 		if (newcourse == null) {
@@ -100,7 +104,8 @@ public class CoursesREST {
 
 	}
 
-	@DeleteMapping("/courses/{id}")
+	@DeleteMapping(value="/courses/{id}")
+	@ResponseBody
 	public ResponseEntity<?> deleteCourse(@PathVariable(value = "id") Long id) {
 
 		Response response;
