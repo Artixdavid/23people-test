@@ -4,6 +4,9 @@ import java.security.Key;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -40,7 +43,7 @@ public class Utils {
 		return false;
 	}
 
-	public static boolean validarFecha(String date) {
+	public static boolean validDate(String date) {
 		try {
 			DateFormat df = new SimpleDateFormat(DATEFORMAT);
 			df.setLenient(false);
@@ -51,7 +54,7 @@ public class Utils {
 		}
 	}
 
-	public static Date formatearFecha(String date) {
+	public static Date formatDate(String date) {
 		try {
 			return new SimpleDateFormat(DATEFORMAT).parse(date);
 		} catch (ParseException e) {
@@ -60,10 +63,25 @@ public class Utils {
 		return null;
 	}
 
-	public static String formatearRut(String rut) {
+	public static String formatRut(String rut) {
 
-		String res = rut.substring(rut.length() - 1,rut.length());
+		String res = rut.substring(rut.length() - 1, rut.length());
 		return rut + "-" + res;
 
+	}
+
+	public static boolean validAge(String age) {
+
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern(DATEFORMAT);
+		LocalDate age_ = LocalDate.parse(age, fmt);
+		LocalDate now = LocalDate.now();
+
+		Period realAge = Period.between(age_, now);
+
+		if (realAge.getYears() >= 18) {
+			return true;
+		}
+
+		return false;
 	}
 }

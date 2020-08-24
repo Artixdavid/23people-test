@@ -39,7 +39,7 @@ public class StudentServiceImpl implements IStudentService {
 
 		String rut = studenNew.getRut();
 		rut.replaceAll(".", "");
-		rut = Utils.formatearRut(rut);
+		rut = Utils.formatRut(rut);
 		Student student = studentDao.findStudenByRut(rut);
 
 		if (student != null) {
@@ -53,7 +53,7 @@ public class StudentServiceImpl implements IStudentService {
 			return false;
 		}
 
-		Date date = Utils.formatearFecha(studenNew.getAge());
+		Date date = Utils.formatDate(studenNew.getAge());
 
 		student.setAge(date);
 		student.setCourse(course);
@@ -82,28 +82,28 @@ public class StudentServiceImpl implements IStudentService {
 
 	@Override
 	public boolean update(Long id, StudentNew studenNew) {
-		
+
 		String rut = studenNew.getRut();
 		rut.replaceAll(".", "");
-		rut = Utils.formatearRut(rut);
-		
+		rut = Utils.formatRut(rut);
+
 		Student student = studentDao.findStudenByRutAndId(rut, id);
 
 		if (student != null) {
 			return false;
 		} else {
 			student = studentDao.findById(id).orElse(null);
-			if(student == null) {
+			if (student == null) {
 				return false;
 			}
 		}
-		
+
 		Course course = courseDao.findById(studenNew.getCourseId()).orElse(null);
 		if (course == null) {
 			return false;
 		}
-		
-		Date date = Utils.formatearFecha(studenNew.getAge());
+
+		Date date = Utils.formatDate(studenNew.getAge());
 
 		student.setAge(date);
 		student.setCourse(course);
@@ -112,7 +112,7 @@ public class StudentServiceImpl implements IStudentService {
 		student.setRut(rut);
 
 		studentDao.save(student);
-		
+
 		return true;
 	}
 

@@ -36,5 +36,3 @@ INSERT INTO students (name, lastname, rut, age, courseid) values ('Perla', 'Seit
 INSERT INTO students (name, lastname, rut, age, courseid) values ('David', 'Leones', '18599209-8', '1992-11-09',1);
 
 INSERT INTO students (name, lastname, rut, age) values ('Juan', 'Rodriguez', '7457313-4', '1992-02-08');
-
--

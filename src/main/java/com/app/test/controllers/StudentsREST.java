@@ -5,14 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.test.Utils.Utils;
@@ -21,8 +19,6 @@ import com.app.test.dto.StudentNew;
 import com.app.test.models.entity.Student;
 import com.app.test.models.services.IStudentService;
 
-@CrossOrigin(origins = { "http://localhost:4200" }, methods = { RequestMethod.DELETE, RequestMethod.GET,
-		RequestMethod.POST, RequestMethod.PUT })
 @RestController
 public class StudentsREST {
 
@@ -65,8 +61,9 @@ public class StudentsREST {
 			response = new Response("Age can not be empty");
 			return new ResponseEntity<Object>(response, HttpStatus.BAD_REQUEST);
 		} else {
-			boolean validaFecha = Utils.validarFecha(newStuden.getAge());
-			if (!validaFecha) {
+			boolean validDate = Utils.validDate(newStuden.getAge());
+			boolean validAge = Utils.validAge(newStuden.getAge());
+			if (!validDate || !validAge) {
 				response = new Response("Invalid age");
 				return new ResponseEntity<Object>(response, HttpStatus.BAD_REQUEST);
 			}
@@ -123,7 +120,7 @@ public class StudentsREST {
 			response = new Response("Age can not be empty");
 			return new ResponseEntity<Object>(response, HttpStatus.BAD_REQUEST);
 		} else {
-			boolean validaFecha = Utils.validarFecha(studentNew.getAge());
+			boolean validaFecha = Utils.validDate(studentNew.getAge());
 			if (!validaFecha) {
 				response = new Response("Invalid age");
 				return new ResponseEntity<Object>(response, HttpStatus.BAD_REQUEST);
