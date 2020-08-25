@@ -1,5 +1,6 @@
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\models\dao\IUserDao.java
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\models\services\IStudentService.java
+C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\config\SwaggerConfig.java
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\controllers\StudentsREST.java
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\auth\service\JWTServiceImpl.java
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\dto\CourseNew.java
@@ -21,6 +22,7 @@ C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-tw
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\models\dao\IStudentDao.java
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\models\entity\User.java
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\models\services\UserServiceImpl.java
+C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\config\WebSecurityConfig.java
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\models\entity\Course.java
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\dto\StudentNew.java
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\auth\service\JWTService.java
