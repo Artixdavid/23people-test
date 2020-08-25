@@ -1,6 +1,5 @@
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\models\dao\IUserDao.java
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\models\services\IStudentService.java
-C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\config\SwaggerConfig.java
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\controllers\StudentsREST.java
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\auth\service\JWTServiceImpl.java
 C:\Users\usuario\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\spring-twentythree-people-test\src\main\java\com\app\test\dto\CourseNew.java

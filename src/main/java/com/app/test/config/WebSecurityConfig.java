@@ -19,6 +19,6 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable()
 				.addFilterAfter(new JWTAuthorizationFilter(jwtService), UsernamePasswordAuthenticationFilter.class)
-				.authorizeRequests().antMatchers("/**").permitAll().antMatchers("/v2/**","/swagger-ui.html","/swagger-ui.html**").permitAll().anyRequest().authenticated();
+				.authorizeRequests().antMatchers("/token").permitAll().anyRequest().authenticated();
 	}
 }

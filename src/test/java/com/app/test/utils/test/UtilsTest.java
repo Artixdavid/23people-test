@@ -15,7 +15,12 @@ class UtilsTest {
 	}
 	
 	@Test
-	void shoulNotAValidRut() {
+	void shoulNotAValidRutOnlyWords() {
 		assertFalse(Utils.validRut("Hello world!"));
+	}
+	
+	@Test
+	void shoulNotAValidRut() {
+		assertFalse(Utils.validRut("25766635-k"));
 	}
 }
