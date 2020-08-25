@@ -19,7 +19,7 @@ public class Utils {
 	public static final String PREFIXTOKEN = "Bearer ";
 	private static final String DATEFORMAT = "yyyy-MM-dd";
 
-	public static boolean validarRut(String rut) {
+	public static boolean validRut(String rut) {
 
 		try {
 			rut = rut.toUpperCase();

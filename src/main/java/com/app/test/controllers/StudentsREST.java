@@ -81,7 +81,7 @@ public class StudentsREST {
 			response = new Response("Rut can not be empty");
 			return new ResponseEntity<Object>(response, HttpStatus.BAD_REQUEST);
 		} else {
-			boolean validaRut = Utils.validarRut(newStuden.getRut());
+			boolean validaRut = Utils.validRut(newStuden.getRut());
 			if (!validaRut) {
 				response = new Response("Invalid rut");
 				return new ResponseEntity<Object>(response, HttpStatus.BAD_REQUEST);
@@ -140,7 +140,7 @@ public class StudentsREST {
 			response = new Response("Rut can not be empty");
 			return new ResponseEntity<Object>(response, HttpStatus.BAD_REQUEST);
 		} else {
-			boolean validaRut = Utils.validarRut(studentNew.getRut());
+			boolean validaRut = Utils.validRut(studentNew.getRut());
 			if (!validaRut) {
 				response = new Response("Invalid rut");
 				return new ResponseEntity<Object>(response, HttpStatus.BAD_REQUEST);
