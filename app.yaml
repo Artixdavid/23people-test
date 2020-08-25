@@ -1,12 +1,8 @@
-runtime: java8
+runtime: java
 env: flex
-instance_class: F1
-handlers:
-  - url: .*
-    script: auto
-automatic_scaling:
-  min_idle_instances: 1
-  max_idle_instances: automatic
-  min_pending_latency: automatic
-  max_pending_latency: automatic
-  min_num_instances: 1 
+runtime_config:
+  jdk: openjdk8
+
+
+manual_scaling: 
+  instances: 1
